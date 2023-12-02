@@ -1,4 +1,4 @@
-import Day01.indexAll
+//import Day01.indexAll
 
 object Day01 {
 
