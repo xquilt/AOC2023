@@ -1,3 +1,4 @@
+import java.lang.IndexOutOfBoundsException
 import java.math.BigInteger
 import java.security.MessageDigest
 import kotlin.io.path.Path
@@ -29,4 +30,10 @@ fun String.indexAll(value: String): List<Int> = mutableListOf<Int>().let { list 
         index = indexOf(value, index + 1)
     }
     list
+}
+
+fun String.subStringOrNull(range: IntRange): String? {
+    return try {
+        substring(range)
+    } catch (e: IndexOutOfBoundsException) {null}
 }
